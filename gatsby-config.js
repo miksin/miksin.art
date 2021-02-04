@@ -46,6 +46,7 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    // `gatsby-plugin-typegen`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
