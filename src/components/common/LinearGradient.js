@@ -1,14 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import ModelVector2d from "@models/Vector2d"
+import {Vector2d} from "../../models/Vector2d"
 
 const LinearGradient = ({
   id,
   colors,
   axisDeg,
 }) => {
-  const vector = ModelVector2d.fromPCS(1, axisDeg / 180 * Math.PI)
+  const vector = Vector2d.fromPCS(1, axisDeg / 180 * Math.PI)
   const axisSettings = {
     x1: 0,
     x2: vector.x,

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
 
-import ModelTypeWriter from "@models/TypeWriter"
+import {TypeWriter} from "../../models/TypeWriter"
 import { colors } from "@constants/common"
 import { toDualColors } from "@src/helpers"
 
@@ -63,9 +63,9 @@ const TypingDisplay = ({
 }) => {
   const [typed, setTyped] = useState('')
   const [typeWriter, setTypeWriter] = useState(null)
-  
+
   useEffect(() => {
-    setTypeWriter(new ModelTypeWriter(words, {
+    setTypeWriter(new TypeWriter(words, {
       typeInterval,
       delInterval,
       goalInterval,

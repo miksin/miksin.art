@@ -13,7 +13,7 @@ import GalleryItem from "@components/GalleryItem"
 import TypingDisplay from "@components/common/TypingDisplay"
 import { colors, sizes, devices, settings } from "@constants/gallery"
 import { hexToRgba } from "@src/helpers"
-import ModelFrontmatter from "@models/Frontmatter"
+import {FrontMatter} from "../models/FrontMatter"
 
 const Base = styled(FlexBox)`
 `
@@ -48,7 +48,7 @@ const Gallery = () => {
   const {
     links,
   } = data.site.siteMetadata
-  const allPosts = data.posts.edges.map(edge => new ModelFrontmatter(edge.node.frontmatter))
+  const allPosts = data.posts.edges.map(edge => new FrontMatter(edge.node.frontmatter))
 
   // extend display length when detect scroll to bottom
   const newDisplayNum = now => Math.min(allPosts.length, now + settings.displayPerTime)

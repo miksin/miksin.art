@@ -1,6 +1,18 @@
 /* eslint-disable no-undef */
-export default class TypeWriter {
-  constructor (words, options = {}) {
+export class TypeWriter {
+  typed: string
+  currentIndex: number
+  words: string[]
+  typeInterval: number
+  delInterval: number
+  goalInterval: number
+  timer: NodeJS.Timeout | null
+
+  constructor (words: string[] = [''], options: {
+    typeInterval?: number,
+    delInterval?: number,
+    goalInterval?: number,
+  } = {}) {
     this.typed = ''
     this.currentIndex = 0
     this.words = words.length > 0 ? words : ['']
@@ -10,7 +22,7 @@ export default class TypeWriter {
     this.timer = null
   }
 
-  get target () {
+  get target (): string {
     return this.words[this.currentIndex]
   }
 
@@ -19,7 +31,7 @@ export default class TypeWriter {
    * 0: equal
    * -1: need to delete
   */
-  get diff () {
+  get diff (): number {
     let common = ''
     for (let i = 0; i < this.typed.length; i++) {
       if (i >= this.target.length || this.typed[i] !== this.target[i]) break
@@ -31,7 +43,7 @@ export default class TypeWriter {
     return 0
   }
 
-  update (callback = () => {}) {
+  update (onUpdated: Function = () => {}): void {
     let delay = this.typeInterval
 
     switch (this.diff) {
@@ -48,17 +60,19 @@ export default class TypeWriter {
         break
     }
 
-    callback(this.typed)
-    this.nextTick(delay, callback)
+    onUpdated(this.typed)
+    this.nextTick(delay, onUpdated)
   }
 
-  nextTick (delay, callback) {
+  nextTick (delay: number, onUpdated: Function): void {
     this.timer = setTimeout(() => {
-      this.update(callback)
+      this.update(onUpdated)
     }, delay);
   }
 
-  destroy () {
-    clearTimeout(this.timer)
+  destroy (): void {
+    if (this.timer) {
+      clearTimeout(this.timer)
+    }
   }
 }
