@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-VariableFont_wght.ttf'), url('/fonts/Montserrat-Italic-VariableFont_wght.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #424242;
+}
