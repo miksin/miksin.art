@@ -27,6 +27,7 @@
       <SocialLink src="/img/instagram.svg" href="https://www.instagram.com/miksin_" />
       <SocialLink src="/img/pixiv.png" href="https://www.pixiv.net/users/3774481" />
       <SocialLink src="/img/yt.svg" href="https://www.youtube.com/channel/UCmYleBoaTtNtPVZkaUwFxOw" />
+      <SocialLink src="/img/tiktok.svg" href="https://www.tiktok.com/@miksin_" />
     </div>
   </div>
 </template>
