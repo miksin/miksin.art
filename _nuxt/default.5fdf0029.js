@@ -1,0 +1,1 @@
+import{_ as t}from"./_plugin-vue_export-helper.c27b6911.js";import{l as s,m as a,z as _,k as o}from"./entry.700402a8.js";const c={},n={class:"background-light"},d={class:"main"};function r(e,l){return o(),s("div",n,[a("div",d,[_(e.$slots,"default",{},void 0,!0)])])}const u=t(c,[["render",r],["__scopeId","data-v-6647a1b6"]]);export{u as default};
